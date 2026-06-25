@@ -248,43 +248,83 @@ document.getElementById("result").innerHTML=
 
 </body>
 </html>
-<footer class="premium-footer">
-  <div class="footer-content">
-    <h3>AKSHIT PARASHAR PVT. LTD</h3>
-    <p>Built with passion & creativity</p>
+<footer class="pro-footer">
+  <div class="glass-box">
+    <h2>AKSHIT PARASHAR PVT. LTD</h2>
+    <p>Design • Develop • Deliver</p>
+
+    <div class="socials">
+      <a href="#">🌐</a>
+      <a href="#">📸</a>
+      <a href="#">🐦</a>
+      <a href="#">💼</a>
+    </div>
+
+    <small>© 2026 All Rights Reserved</small>
   </div>
 </footer>
 
 <style>
-  .premium-footer{
-    margin-top: 50px;
-    padding: 30px 15px;
-    text-align: center;
-    background: radial-gradient(circle at top, #1a1a1a, #0a0a0a);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.6);
-  }
+.pro-footer{
+  margin-top: 60px;
+  padding: 40px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #050505, #111);
+}
 
-  .footer-content h3{
-    margin: 0;
-    font-size: 20px;
-    letter-spacing: 2px;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-  }
+.glass-box{
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  animation: floatBox 4s ease-in-out infinite;
+}
 
-  .footer-content h3:hover{
-    color: #00e6e6;
-    text-shadow: 0 0 10px #00e6e6;
-    transform: scale(1.05);
-  }
+.glass-box h2{
+  margin: 0;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
 
-  .footer-content p{
-    margin-top: 8px;
-    font-size: 14px;
-    color: #aaa;
-    letter-spacing: 1px;
-  }
+.glass-box p{
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.socials{
+  margin: 15px 0;
+}
+
+.socials a{
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover{
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 5px #00e6e6);
+}
+
+.glass-box small{
+  color: #666;
+  font-size: 12px;
+}
+
+@keyframes floatBox{
+  0%{ transform: translateY(0px); }
+  50%{ transform: translateY(-6px); }
+  100%{ transform: translateY(0px); }
+}
 </style>
