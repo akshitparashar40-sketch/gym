@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron Beast Fitness</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.9);
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#ff0000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.7);
+padding:40px;
+width:100%;
+}
+
+.hero h1{
+font-size:60px;
+color:#ff0000;
+}
+
+.hero p{
+font-size:20px;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:red;
+padding:12px 25px;
+border-radius:5px;
+color:white;
+text-decoration:none;
+}
+
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+h2{
+color:red;
+margin-bottom:20px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.card{
+background:#222;
+padding:25px;
+width:280px;
+border-radius:10px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:12px 20px;
+background:red;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+.bmi-box{
+max-width:400px;
+margin:auto;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:25px;
+text-decoration:none;
+}
+
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:38px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">IRON BEAST</div>
+<nav>
+<a href="#about">About</a>
+<a href="#plans">Plans</a>
+<a href="#bmi">BMI</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="overlay">
+<h1>BUILD YOUR DREAM BODY</h1>
+<p>Train Hard. Stay Strong.</p>
+<a href="#plans" class="btn">Join Today</a>
+</div>
+</section>
+
+<section id="about">
+<h2>About Our Gym</h2>
+<p>Professional trainers, modern equipment and personalized workout plans.</p>
+</section>
+
+<section id="plans">
+<h2>Membership Plans</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Basic</h3>
+<h1>₹999</h1>
+<p>Gym Access</p>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<h1>₹1999</h1>
+<p>Gym + Diet Plan</p>
+</div>
+
+<div class="card">
+<h3>Personal Training</h3>
+<h1>₹3999</h1>
+<p>1-on-1 Coaching</p>
+</div>
+
+</div>
+</section>
+
+<section id="bmi">
+<h2>BMI Calculator</h2>
+
+<div class="bmi-box">
+<input type="number" id="weight" placeholder="Weight (kg)">
+<input type="number" id="height" placeholder="Height (cm)">
+<button onclick="calcBMI()">Calculate BMI</button>
+<h3 id="result"></h3>
+</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button>Send Message</button>
+
+</section>
+
+<footer>
+© 2026 Iron Beast Fitness
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919999999999">💬</a>
+
+<script>
+function calcBMI(){
+let w=document.getElementById("weight").value;
+let h=document.getElementById("height").value/100;
+
+let bmi=(w/(h*h)).toFixed(1);
+
+document.getElementById("result").innerHTML=
+"Your BMI: "+bmi;
+}
+</script>
+
+</body>
+</html>
