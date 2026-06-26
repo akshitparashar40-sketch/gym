@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Exercise Library - Iron Gym Fitness Calculator India</title>
+<style>
+body{margin:0;font-family:Arial;background:#0b0b0b;color:#fff}
+header{background:#111;padding:20px;text-align:center}
+h1{color:#00e6e6}
+#search{width:90%;max-width:500px;padding:12px;border-radius:8px;border:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:20px}
+.card{background:#1a1a1a;border-radius:12px;padding:16px}
+.card h3{color:#00e6e6;margin-top:0}
+details{margin-top:10px}
+footer{text-align:center;padding:20px;background:#111}
+</style>
+</head>
+<body>
+<header>
+<h1>💪 Exercise Library</h1>
+<p>Search exercises by muscle group</p>
+<input id="search" placeholder="Search: chest, biceps, legs..." onkeyup="filterCards()">
+</header>
+
+<div class="grid" id="grid">
+</div>
+
+<footer>© 2026 Iron Gym Fitness Calculator India</footer>
+
+<script>
+const exercises=[
+["Chest","Push-Up","3-4 sets × 10-15 reps. Keep body straight."],
+["Chest","Bench Press","4 sets × 8-12 reps."],
+["Back","Pull-Up","3 sets × max reps."],
+["Back","Barbell Row","4 sets × 10 reps."],
+["Biceps","Dumbbell Curl","3 sets × 12 reps."],
+["Triceps","Tricep Pushdown","3 sets × 12 reps."],
+["Shoulders","Overhead Press","4 sets × 8-10 reps."],
+["Legs","Squat","4 sets × 10 reps."],
+["Legs","Leg Press","3 sets × 12 reps."],
+["Abs","Crunch","3 sets × 20 reps."],
+["Abs","Plank","3 rounds × 30-60 sec."],
+["Cardio","Running","20-30 minutes."]
+];
+
+const grid=document.getElementById("grid");
+function render(list){
+grid.innerHTML="";
+list.forEach(e=>{
+grid.innerHTML+=`
+<div class="card" data-search="${e.join(" ").toLowerCase()}">
+<h3>${e[1]}</h3>
+<p><b>Muscle:</b> ${e[0]}</p>
+<details>
+<summary>View Guide</summary>
+<p>${e[2]}</p>
+<p><b>Tip:</b> Focus on proper form and controlled movement.</p>
+</details>
+</div>`;
+});
+}
+render(exercises);
+
+function filterCards(){
+const q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=c.dataset.search.includes(q)?"block":"none";
+});
+}
+</script>
+</body>
+</html>
